@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: stock-app-webshop-evtd
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:FD1d4-stock-app-webshop-evtd
+      - image: quay.io/redhat-appstudio/user-workload@sha256:966f7501d2745668e9ae203ea04e2705d480b5e884237fe8ed12772fc1fd7c62
         name: my-java-springboot
         ports:
         - containerPort: 8081
