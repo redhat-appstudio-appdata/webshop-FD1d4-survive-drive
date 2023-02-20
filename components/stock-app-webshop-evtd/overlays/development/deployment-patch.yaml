@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: stock-app-webshop-evtd
+  namespace: rh-ee-jbergfel-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:966f7501d2745668e9ae203ea04e2705d480b5e884237fe8ed12772fc1fd7c62
+        name: my-java-springboot
+        resources: {}
+status: {}
