@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: payment-app-webshop-7nvb
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: payment-app-webshop-7nvb
+    app.kubernetes.io/part-of: webshop
+  name: payment-app-webshop-7nvb
+  namespace: rh-ee-jbergfel-tenant
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: payment-app-webshop-7nvb
+    weight: null
+status: {}
