@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: order-app-webshop-cbmv
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: order-app-webshop-cbmv
+    app.kubernetes.io/part-of: webshop
+  name: order-app-webshop-cbmv
+  namespace: rh-ee-jbergfel-tenant
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: order-app-webshop-cbmv
+    weight: null
+status: {}

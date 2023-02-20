@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: order-app-webshop-cbmv
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: order-app-webshop-cbmv
+    app.kubernetes.io/part-of: webshop
+  name: order-app-webshop-cbmv
+  namespace: rh-ee-jbergfel-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-springboot-app
+      app.kubernetes.io/instance: order-app-webshop-cbmv
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: java-springboot-app
+        app.kubernetes.io/instance: order-app-webshop-cbmv
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:FD1d4-order-app-webshop-cbmv
+        name: my-java-springboot
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 300Mi
+          requests:
+            cpu: 10m
+            memory: 180Mi
+status: {}
