@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: stock-app-webshop-evtd
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: stock-app-webshop-evtd
+    app.kubernetes.io/part-of: webshop
+  name: stock-app-webshop-evtd
+  namespace: rh-ee-jbergfel-tenant
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: stock-app-webshop-evtd
+    weight: null
+status: {}

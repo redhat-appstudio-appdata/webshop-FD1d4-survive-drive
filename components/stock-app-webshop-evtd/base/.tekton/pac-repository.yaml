@@ -1,0 +1,15 @@
+apiVersion: pipelinesascode.tekton.dev/v1alpha1
+kind: Repository
+metadata:
+  annotations:
+    appstudio.openshift.io/application: webshop
+    appstudio.openshift.io/component: stock-app-webshop-evtd
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: stock-app-webshop-evtd
+  namespace: rh-ee-jbergfel-tenant
+spec:
+  url: https://github.com/JoranBergfeld/webshop
