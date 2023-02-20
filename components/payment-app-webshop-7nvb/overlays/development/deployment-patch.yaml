@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: payment-app-webshop-7nvb
+  namespace: rh-ee-jbergfel-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:fb4fd4e8f54884159c1f0f385fa5448fcd6720f68d302e4581ddf868afcc41d9
+        name: my-java-springboot
+        resources: {}
+status: {}
